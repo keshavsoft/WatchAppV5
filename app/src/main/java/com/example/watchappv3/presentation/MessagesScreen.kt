@@ -1,4 +1,8 @@
 package com.example.watchappv3.presentation
 
-class MessagesScreen {
+import androidx.compose.runtime.Composable
+
+@Composable
+fun MessagesScreen() {
+    MessagesUI()
 }
