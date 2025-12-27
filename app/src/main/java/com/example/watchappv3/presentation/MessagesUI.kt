@@ -1,5 +1,6 @@
 package com.example.watchappv3.presentation
 
+import android.content.Context
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -23,7 +24,7 @@ import com.example.watchappv3.presentation.ws.WatchWebSocketClient
 
 
 @Composable
-fun MessagesUI() {
+fun MessagesUI(context: Context) {
     val isConnected = WatchWebSocketClient
         .connected
         .collectAsState(initial = false)
@@ -59,7 +60,7 @@ fun MessagesUI() {
 
             item {
                 Spacer(modifier = Modifier.height(8.dp))
-                SendButtons()
+                SendButtons(context)
             }
         }
     }
