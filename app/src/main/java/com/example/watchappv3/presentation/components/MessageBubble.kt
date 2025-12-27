@@ -13,13 +13,21 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.wear.compose.material.Text
+import com.example.watchappv3.presentation.model.MessageType
 
 @Composable
 fun MessageBubble(
     text: String,
+    type: MessageType,
     isTime: Boolean = false
 ) {
-    val bgColor = if (isTime) Color(0xFF0D47A1) else Color(0xFF1F1F1F)
+    val bgColor1 = if (isTime) Color(0xFF0D47A1) else Color(0xFF1F1F1F)
+    val bgColor = when (type) {
+        MessageType.SENT -> Color(0xFF1F1F1F)
+        MessageType.RECEIVED -> Color(0xFF0D47A1)
+        MessageType.SYSTEM -> Color.DarkGray
+    }
+
     val fontSize = if (isTime) 11.sp else 12.sp
 
     Box(

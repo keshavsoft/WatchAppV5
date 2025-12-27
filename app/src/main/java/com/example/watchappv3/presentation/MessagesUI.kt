@@ -51,7 +51,10 @@ fun MessagesUI() {
             }
 
             items(messages) { msg ->
-                MessageBubble(msg, isTime = msg.startsWith("🕒"))
+                MessageBubble(
+                    text = msg.text,
+                    type = msg.type
+                )
             }
 
             item {

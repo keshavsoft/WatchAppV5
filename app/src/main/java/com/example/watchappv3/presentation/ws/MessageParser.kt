@@ -1,5 +1,8 @@
 package com.example.watchappv3.presentation.ws
 
+import android.R.attr.type
+import com.example.watchappv3.presentation.model.MessageType
+import com.example.watchappv3.presentation.ws.WebSocketState.addMessage
 import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
@@ -16,14 +19,21 @@ object MessageParser {
                         "HH:mm:ss",
                         Locale.getDefault()
                     ).format(Date(millis))
-                    WebSocketState.append("🕒 $time")
+
+                    WebSocketState.addMessage("🕒 $time", MessageType.SYSTEM) // ✅ correct
                 }
                 "text" -> {
-                    WebSocketState.append("💬 ${json.getString("value")}")
+                    WebSocketState.addMessage(
+                        text = "🗨 ${json.getString("value")}",
+                        type = MessageType.RECEIVED
+                    )
                 }
             }
         } catch (e: Exception) {
-            WebSocketState.append(text)
+            WebSocketState.addMessage(
+                text = text,
+                type = MessageType.RECEIVED
+            )
         }
     }
 }

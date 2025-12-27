@@ -2,6 +2,8 @@ package com.example.watchappv3.presentation.ws
 
 import WebSocketListenerImpl
 import android.util.Log
+import com.example.watchappv3.presentation.model.ChatMessage
+import com.example.watchappv3.presentation.model.MessageType
 import kotlinx.coroutines.flow.StateFlow
 import okhttp3.*
 
@@ -12,7 +14,7 @@ object WatchWebSocketClient {
     private val client = OkHttpClient()
     private var socket: WebSocket? = null
 
-    val messages: StateFlow<List<String>> = WebSocketState.messages
+    val messages: StateFlow<List<ChatMessage>> = WebSocketState.messages
     val connected: StateFlow<Boolean> = WebSocketState.connected
 
     fun connect() {
@@ -43,7 +45,19 @@ object WatchWebSocketClient {
         WebSocketState.reset()
     }
 
-    fun sendMessage(message: String) {
+    fun sendMessage1(message: String) {
         socket?.send(message) ?: Log.w(TAG, "sendMessage: socket not connected")
     }
+
+    fun sendMessage(message: String) {
+        if (socket?.send(message) == true) {
+            WebSocketState.addMessage(
+                text = message,
+                type = MessageType.SENT
+            )
+        } else {
+            Log.w(TAG, "sendMessage: socket not connected")
+        }
+    }
+
 }
