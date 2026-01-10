@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PagerScreen() {
-    val pagerState = rememberPagerState(pageCount = { 2 })
+    val pagerState = rememberPagerState(pageCount = { 3 })
     val context = LocalContext.current
 
     Box {
@@ -49,6 +49,7 @@ fun PagerScreen() {
             when (page) {
                 0 -> MessagesUI(context = context, onVersion = {})
                 1 -> VersionScreen()
+                2 -> SendMessageScreen()
             }
         }
 
@@ -59,7 +60,7 @@ fun PagerScreen() {
                 .padding(top = 6.dp)
         ) {
             PagerIndicator(
-                pageCount = 2,
+                pageCount = 3,
                 currentPage = pagerState.currentPage
             )
         }
