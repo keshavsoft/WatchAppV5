@@ -1,4 +1,4 @@
-package com.example.watchappv3.presentation
+package com.example.watchappv5.presentation
 
 import android.content.Context
 import androidx.compose.foundation.layout.Spacer
@@ -18,9 +18,9 @@ import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.items
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
-import com.example.watchappv3.presentation.components.MessageBubble
-import com.example.watchappv3.presentation.components.SendButtons
-import com.example.watchappv3.presentation.ws.WatchWebSocketClient
+import com.example.watchappv5.presentation.components.MessageBubble
+import com.example.watchappv5.presentation.components.SendButtons
+import com.example.watchappv5.presentation.ws.WatchWebSocketClient
 
 
 @Composable

@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.watchappv3"
+    namespace = "com.example.watchappv5"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.watchappv3"
+        applicationId = "com.example.watchappv5"
         minSdk = 30
         targetSdk = 36
         versionCode = 1

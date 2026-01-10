@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "WatchAppV3"
+rootProject.name = "WatchAppV5"
 include(":app")

@@ -1,4 +1,4 @@
-package com.example.watchappv3.presentation.components
+package com.example.watchappv5.presentation.components
 
 import android.content.Context
 import androidx.compose.foundation.layout.Column
@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.watchappv3.presentation.getAndroidId
-import com.example.watchappv3.presentation.ws.WatchWebSocketClient
+import com.example.watchappv5.presentation.getAndroidId
+import com.example.watchappv5.presentation.ws.WatchWebSocketClient
 
 @Composable
 fun SendButtons(context: Context) {

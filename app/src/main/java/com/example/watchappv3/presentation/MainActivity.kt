@@ -1,4 +1,4 @@
-package com.example.watchappv3.presentation
+package com.example.watchappv5.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import com.example.watchappv3.presentation.ws.WatchWebSocketClient
+import com.example.watchappv5.presentation.ws.WatchWebSocketClient
 
 import androidx.wear.compose.navigation.SwipeDismissableNavHost
 import androidx.wear.compose.navigation.composable

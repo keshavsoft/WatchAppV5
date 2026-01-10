@@ -1,7 +1,7 @@
-package com.example.watchappv3.presentation.ws
+package com.example.watchappv5.presentation.ws
 
-import com.example.watchappv3.presentation.model.ChatMessage
-import com.example.watchappv3.presentation.model.MessageType
+import com.example.watchappv5.presentation.model.ChatMessage
+import com.example.watchappv5.presentation.model.MessageType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

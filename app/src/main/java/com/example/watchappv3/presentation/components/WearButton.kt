@@ -1,4 +1,4 @@
-package com.example.watchappv3.presentation.components
+package com.example.watchappv5.presentation.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding

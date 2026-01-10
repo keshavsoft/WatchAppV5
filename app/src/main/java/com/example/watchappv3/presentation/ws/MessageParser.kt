@@ -1,8 +1,8 @@
-package com.example.watchappv3.presentation.ws
+package com.example.watchappv5.presentation.ws
 
 import android.R.attr.type
-import com.example.watchappv3.presentation.model.MessageType
-import com.example.watchappv3.presentation.ws.WebSocketState.addMessage
+import com.example.watchappv5.presentation.model.MessageType
+import com.example.watchappv5.presentation.ws.WebSocketState.addMessage
 import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*

@@ -1,4 +1,4 @@
-package com.example.watchappv3.presentation.components
+package com.example.watchappv5.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement.End
@@ -21,7 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.wear.compose.material.Text
-import com.example.watchappv3.presentation.model.MessageType
+import com.example.watchappv5.presentation.model.MessageType
 
 @Composable
 fun MessageBubble(

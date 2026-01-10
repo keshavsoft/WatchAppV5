@@ -1,4 +1,4 @@
-package com.example.watchappv3.presentation.model
+package com.example.watchappv5.presentation.model
 
 enum class MessageType {
     SENT,
