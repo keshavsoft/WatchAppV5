@@ -3,14 +3,18 @@ package com.example.watchappv5.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import com.example.watchappv5.presentation.ws.WatchWebSocketClient
 
-import androidx.wear.compose.navigation.SwipeDismissableNavHost
-import androidx.wear.compose.navigation.composable
-import androidx.wear.compose.navigation.rememberSwipeDismissableNavController
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.wear.compose.material.MaterialTheme
 
 class MainActivity : ComponentActivity() {
     override fun onStart() {
@@ -26,22 +30,24 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppNav()
+            MaterialTheme { Box(Modifier.background(Color.Black)) { PagerScreen() } }
         }
     }
 }
 
 @Composable
-fun AppNav() {
-    val navController = rememberSwipeDismissableNavController()
+fun PagerScreen() {
+    val pagerState = rememberPagerState(pageCount = { 2 })
     val context = LocalContext.current
 
-    SwipeDismissableNavHost(
-        navController = navController,
-        startDestination = "home"
-    ) {
-        composable("home") {
-            MessagesScreen(context)
+    HorizontalPager(state = pagerState) { page ->
+        when (page) {
+            0 -> MessagesUI(
+                context = context,
+                onVersion = {}   // swipe handles navigation now
+            )
+            1 -> VersionScreen()
         }
     }
 }
+
